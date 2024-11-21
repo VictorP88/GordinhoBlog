@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if ! gem list foreman -i --silent; then
+  echo "Foreman gem is not installed. Please install it by running:"
+  echo "gem install foreman"
+  exit 1
+fi
+
+export PORT="${PORT:-3000}"
+export RUBY_DEBUG_OPEN="true"
+export RUBY_DEBUG_LAZY="true"
+
+exec foreman start -f Procfile.dev "$@"
