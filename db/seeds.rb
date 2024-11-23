@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# user = User.where(email: "victorpinheirojc@gmail.com").first_or_initialize
+# user.update!(
+#   password: "p12345"
+#   password_confirmation: "p12345"
+# )
+
+# 100.times do |i|
+#   BlogPost.create title: "Blog Post #{i}", content: "Hello World", published_at: Time.current
+# end
