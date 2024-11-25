@@ -1,5 +1,11 @@
 <h1>My blog</h1>
 
+<div data-controller="counter">
+  <button data-action="click->counter#decrement">-</button>
+  <span data-counter-target="output">0</span>
+  <button data-action="click->counter#increment">+</button>
+</div>
+
 <% @blog_posts.each do |blog_post| %>
     <div>
         <%= image_tag blog_post.cover_image if blog_post.cover_image.present? %>
@@ -16,3 +22,4 @@
 <% end %>
 
 <%== pagy_nav(@pagy) %>
+
