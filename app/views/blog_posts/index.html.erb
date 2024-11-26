@@ -1,9 +1,11 @@
 <h1>My blog</h1>
 
-<%= button_to 'Get Random Joke', random_joke_path, method: :post, data: { turbo_stream: true }, remote: true %>
+<%= button_to 'Get Random Joke', random_joke_path, method: :post %>
+
 <div id="joke-display">
-  <%= turbo_frame_tag "joke_display" do %>
-    <!-- O retorno da piada será exibido aqui -->
+  <% if session[:joke] %>
+    <p><%= session[:joke] %></p>
+    <% session.delete(:joke) %> <!-- Limpa a piada da sessão após exibir -->
   <% end %>
 </div>
 
