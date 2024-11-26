@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   end
 
   root "blog_posts#index"
+  post 'random_joke', to: 'jokes#random_joke'  # Rota definida para método POST
 end

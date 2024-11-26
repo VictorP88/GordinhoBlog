@@ -2,7 +2,7 @@ class BlogPost < ApplicationRecord
   has_one_attached :cover_image
   has_rich_text :content
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { minimum: 5 } # aqui viabilizei o TDD
   validates :content, presence: true
 
   scope :sorted, ->{order(arel_table[:published_at].desc.nulls_last).order(updated_at: :desc)}

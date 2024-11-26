@@ -1,23 +1,29 @@
-import { Controller } from "stimulus";
+// counter_controller.js
+import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-    static targets = ["countValue"];
+  static targets = ["valor"]
 
-    connect() {
-        this.count = parseInt(this.countValueTarget.textContent) || 0;
-    }
+  connect() {
+    console.log("Conexão"); 
+    this.valor = parseInt(this.valorTarget.textContent)
+    console.log("Valor inicial:", this.valor);
+  }
 
-    increment() {
-        this.count += 1;
-        this.updateCount();
-    }
+  incrementar() {
+    console.log("Incrementar chamado"); 
+    this.valor += 1
+    this.atualizarValor()
+  }
 
-    decrement() {
-        this.count -= 1;
-        this.updateCount();
-    }
+  decrementar() {
+    console.log("Decrementar chamado"); 
+    this.valor -= 1
+    this.atualizarValor()
+  }
 
-    updateCount() {
-        this.countValueTarget.textContent = this.count;
-    }
+  atualizarValor() {
+    console.log("Valor atual:", this.valor); 
+    this.valorTarget.textContent = this.valor
+  }
 }

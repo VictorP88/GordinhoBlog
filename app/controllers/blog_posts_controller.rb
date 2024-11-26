@@ -50,4 +50,6 @@ class BlogPostsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     redirect_to root_path, alert: 'Blog post not found.'  # Mensagem de erro se o post não for encontrado
   end
+
+
 end

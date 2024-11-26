@@ -1,6 +1,6 @@
-import { Application } from "stimulus"
-import { definitionsFromContext } from "@hotwired/stimulus-webpack-helpers"
+import { Application } from "@hotwired/stimulus";
+import { Turbo } from "@hotwired/turbo-rails"
+import CounterController from "./controllers/counter_controller"; // Verifique o caminho correto
 
-const application = Application.start()
-const context = require.context("./controllers", true, /.js$/)
-application.load(definitionsFromContext(context))
+const application = Application.start();
+application.register("counter", CounterController);

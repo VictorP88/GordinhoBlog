@@ -61,3 +61,11 @@ gem "devise", "~> 4.9"
 gem "tailwindcss-rails", "~> 3.0"
 
 gem "pagy", "~> 9.3"
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0'
+end
+
+gem 'httparty'
+
+gem "hotwire-rails", "~> 0.1.3"
