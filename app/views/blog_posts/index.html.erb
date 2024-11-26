@@ -3,9 +3,8 @@
 <%= button_to 'Get Random Joke', random_joke_path, method: :post %>
 
 <div id="joke-display">
-  <% if session[:joke] %>
-    <p><%= session[:joke] %></p>
-    <% session.delete(:joke) %> <!-- Limpa a piada da sessão após exibir -->
+  <% if flash[:joke] %>
+    <p><%= flash[:joke] %></p>
   <% end %>
 </div>
 

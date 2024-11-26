@@ -6,8 +6,8 @@ class JokesController < ApplicationController
     response = self.class.get('/jokes/random')
     @joke = response.parsed_response['value']
 
-    # Armazenando a piada na sessão
-    session[:joke] = @joke
+    # Armazenando a piada no flash
+    flash[:joke] = @joke
 
     # Redireciona para a página inicial
     redirect_to root_path
