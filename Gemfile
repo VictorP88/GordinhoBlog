@@ -63,7 +63,7 @@ gem "tailwindcss-rails", "~> 3.0"
 gem "pagy", "~> 9.3"
 
 group :development, :test do
-  gem 'rspec-rails', '~> 6.0'
+  gem 'rspec-rails', '~> 7.1'
 end
 
 gem 'httparty'
